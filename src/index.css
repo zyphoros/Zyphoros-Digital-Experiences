@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Sansation';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Sansation'), url('/fonts/Sansation-Regular.woff') format('woff'), url('https://fonts.cdnfonts.com/s/382/Sansation-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Sansation';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Sansation-Bold'), url('/fonts/Sansation-Bold.woff') format('woff'), url('https://fonts.cdnfonts.com/s/382/Sansation-Bold.woff') format('woff');
+}
+
+.font-sansation {
+  font-family: 'Sansation', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@font-face {
+  font-family: 'Rotis Sans Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Rotis Sans Serif'), local('Rotis II Sans Pro'), local('RotisSansSerif'), url('/fonts/RotisSansSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rotis Sans Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Rotis Sans Serif Bold'), local('Rotis II Sans Pro Bold'), local('RotisSansSerif-Bold'), url('/fonts/RotisSansSerif-Bold.ttf') format('truetype');
+}
+
+.font-rotis {
+  font-family: 'Rotis Sans Serif', 'Rotis II Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #160d1b;
+    --brand-lilac: #b79aff;
+    --neon-lime: #c1ff72;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #160d1b;
+    color: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+  }
+}
+
+/* Subtle, refined glows */
+.glow-lime {
+  box-shadow: 0 4px 20px -2px rgba(193, 255, 114, 0.25);
+}
+
+.glow-lime-subtle {
+  box-shadow: 0 2px 12px rgba(193, 255, 114, 0.15);
+}
+
+.glow-lilac {
+  box-shadow: 0 8px 25px -4px rgba(183, 154, 255, 0.2);
+}
+
+/* Clean, modern glassmorphism */
+.glass-card {
+  background: rgba(26, 16, 33, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(183, 154, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(183, 154, 255, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(183, 154, 255, 0.08);
+  background: rgba(32, 19, 41, 0.65);
+}
+
+/* Minimalist ambient grid pattern */
+.tech-grid-pattern {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(183, 154, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(183, 154, 255, 0.025) 1px, transparent 1px);
+}
+
+/* Subtle pulse animation */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.96);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: subtle-pulse 2.5s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

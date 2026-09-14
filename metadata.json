@@ -1,0 +1,6 @@
+{
+  "name": "Zyphoros",
+  "description": "Landing page de alto impacto para a Zyphoros, especialista em desenvolvimento de sites e soluções tecnológicas para empresas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
