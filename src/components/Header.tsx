@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { WHATSAPP_LINK } from '../data';
 import { ZyphorosSymbol } from './ZyphorosLogo';
 
-interface HeaderProps {
-  onOpenExportModal: () => void;
-}
-
-export const Header: React.FC<HeaderProps> = ({ onOpenExportModal }) => {
+export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -79,20 +75,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenExportModal }) => {
 
         {/* Header Action CTAs */}
         <div className="hidden lg:flex items-center gap-3">
-          {/* Export / Standalone Single File Modal Button */}
-          <button
-            onClick={onOpenExportModal}
-            id="btn-export-code"
-            className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/10 hover:border-[#b79aff]/40 transition-all duration-200"
-            title="Ver e copiar código autossuficiente (1 arquivo index.html)"
-          >
-            <svg className="w-3.5 h-3.5 text-[#b79aff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-            <span>Código 1-Arquivo</span>
-          </button>
-
           {/* Primary WhatsApp CTA in Header */}
           <a
             href={WHATSAPP_LINK}
@@ -113,17 +95,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenExportModal }) => {
 
         {/* Mobile Menu Trigger */}
         <div className="flex items-center gap-2 md:hidden">
-          <button
-            onClick={onOpenExportModal}
-            className="p-2 text-[#b79aff] hover:text-white rounded-lg border border-[#b79aff]/20"
-            title="Código 1-arquivo"
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-          </button>
-          
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             id="mobile-menu-toggle"
